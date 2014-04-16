@@ -1,6 +1,6 @@
 <?php 
 //hostname
-$host ="http://ec2-54-178-141-251.ap-northeast-1.compute.amazonaws.com";
+$host ="http://ec2-54-178-142-128.ap-northeast-1.compute.amazonaws.com";
 
 
 //twilio key
