@@ -1,22 +1,14 @@
 <?php
-require  ('Services/Twilio.php');
+require  'twilio-php-master/Services/Twilio.php';
 include "global.php";
+//header('Content-type: text/xml; charset=UTF-8');
 
-$response = new Services_Twilio_Twiml();
-/*
-
-$gather = $response->gather(array(
-    'action' => $host.'/process_call.php',
-    'method' => 'GET',
-    'numDigits' => '1'
-));
-
-$gather->say("push number you like");
-*/
-$response->say('こんにちは');
+$say = 'hello';
+$response = new Services_Twilio($sid,$token);
+$response->say($say);
 $response->hangup();
 
-header('Content-type: text/xml; charset=UTF-8');
+header('Content-Type: text/xml');
 print $response;
 
 ?>
