@@ -1,6 +1,6 @@
 <?php
 include "global.php";
-require("Services/Twilio.php");
+require ("Services/Twilio.php");
 
 //list of phone numbers imported by csv file.
 /* input numbers from CSV File.
@@ -47,7 +47,7 @@ foreach ($numbers as $number){
         );
         echo "start call\n";
     } catch(Exception $e){
-        echo ' Error starting phone call';
+        echo " Error starting phone call\n";
     }
 
     echo 'hello';

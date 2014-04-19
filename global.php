@@ -1,12 +1,12 @@
 <?php 
 //hostname
-$host ="http://ec2-54-178-142-128.ap-northeast-1.compute.amazonaws.com";
+$host ="ec2-54-178-157-116.ap-northeast-1.compute.amazonaws.com/telephone";
 
 
 //twilio key
-$sid = "AC70d3622a1187ea784a4d99332d44e073";
-$token ="244e130a8b75d9c498c9eb60ffee37e6";
-$my_number = "+815031596546";
+$sid = "ACbb05e11ebe8b0d129b39eb66be26adb1";
+$token ="d84a85e9bf941d07723f9bb8ae8a4ea6";
+$my_number = "+81345895742";
 
 ?>
 
