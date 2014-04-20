@@ -5,16 +5,16 @@ include "global.php";
 
 try{
    	$say = 'hello';
-	$response = new Services_Twilio($sid,$token);
+	$response = new Services_Twilio_Twiml();
 	$response->say($say);
-	$response->hangup();
+	$response->hangup();	
 
 	header('Content-Type: text/xml');
 	print $response;
 
 } catch(Exception $e){
     	echo $e;
-    	echo " call.php\n";
+
 }
 
 
