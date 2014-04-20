@@ -17,7 +17,6 @@ $gather->say("push number you like");
 $response->say("push a number as you want");
 $response->hangup();
 
-header('Content-Type:text/xml');
 print $response;
 
 ?>
