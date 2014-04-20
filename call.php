@@ -8,14 +8,15 @@ try{
 	$response = new Services_Twilio($sid,$token);
 	$response->say($say);
 	$response->hangup();
-	} catch(Exception $e){
+
+	header('Content-Type: text/xml');
+	print $response;
+
+} catch(Exception $e){
     	echo $e;
     	echo " call.php\n";
-    }
+}
 
-
-header('Content-Type: text/xml');
-print $response;
 
 
 ?>
