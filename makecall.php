@@ -17,7 +17,7 @@ foreach ($numbers as $number){
         $call = $client->account->calls->create(
             $my_number, // Caller ID
             $number,    // Your friend's number
-            './call.php'
+           $host.'/call.php'
         );
 
 
