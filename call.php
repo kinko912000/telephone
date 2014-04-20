@@ -4,13 +4,13 @@ include "global.php";
 //header('Content-type: text/xml; charset=UTF-8');
 
 try{
-   	$say = 'こんにちは';
-	$response = new Services_Twilio_Twiml();
-	$response->say($say);
-//	$response->hangup();	
 
-//	header('Content-type: text/xml; charset=UTF-8');
-	print $response;
+	$response = new Services_Twilio_Twiml();
+	$response->say('こんにちは', array('language' => 'ja-jp'));
+	$response->hangup();	
+
+	header('Content-type: text/xml; charset=utf-8');
+	echo $response;
 
 } catch(Exception $e){
     	echo $e;

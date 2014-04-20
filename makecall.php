@@ -1,7 +1,7 @@
 <?php
 include "global.php";
 require 'twilio-php-master/Services/Twilio.php';
-require 'twilio-php-master/Services/*';
+
 $numbers = array('+818054823305');
 // Instntiate a client to Twilio's REST API;
 
