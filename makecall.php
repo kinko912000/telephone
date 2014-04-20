@@ -12,14 +12,15 @@ $client = new Services_Twilio($sid,$token);
 
 foreach ($numbers as $number){
     try{
-
+/*
         $call = $client->account->calls->create(
             $my_number,                                 // Caller ID
             $number,                                                // Your friend's number
             $host.'/call.php'    // Location of your TwiML
         );
-        echo "Started call: $call->sid\n";
+*/
         echo "start call\n";
+        echo "<a href='./index.php'> back to top page </a>";
     } catch(Exception $e){
         echo $e;
         echo " Error starting phone call\n";
