@@ -1,7 +1,7 @@
 <?php 
 //hostname
-//$host ="ec2-54-178-157-116.ap-northeast-1.compute.amazonaws.com/telephone";
-$host ="ec2-54-178-157-116.ap-northeast-1.compute.amazonaws.com/telephone";
+$host ="http://ec2-54-178-157-116.ap-northeast-1.compute.amazonaws.com/telephone";
+//$host ="localhost/telephone";
 
 
 //twilio key

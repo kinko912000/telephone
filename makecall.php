@@ -6,8 +6,13 @@ $numbers = array('+818054823305');
 
 $client = new Services_Twilio($sid,$token);
 
+
+
+
+
 foreach ($numbers as $number){
     try{
+
         $call = $client->account->calls->create(
             $my_number,                                 // Caller ID
             $number,                                                // Your friend's number
@@ -16,6 +21,7 @@ foreach ($numbers as $number){
         echo "Started call: $call->sid\n";
         echo "start call\n";
     } catch(Exception $e){
+        echo $e;
         echo " Error starting phone call\n";
     }
 
