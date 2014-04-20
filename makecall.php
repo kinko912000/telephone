@@ -17,7 +17,8 @@ foreach ($numbers as $number){
         $call = $client->account->calls->create(
             $my_number, // Caller ID
             $number,    // Your friend's number
-           $host.'/call.php'
+           // $host.'/call.php'
+            'http://ec2-54-178-148-227.ap-northeast-1.compute.amazonaws.com/telephone/call.xml'
         );
 
 
