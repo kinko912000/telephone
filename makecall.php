@@ -19,6 +19,7 @@ foreach ($numbers as $number){
             $host.'/call.php'    // Location of your TwiML
         );
 */
+
         echo "start call\n";
         echo "<a href='./index.php'> back to top page </a>";
     } catch(Exception $e){
@@ -26,6 +27,6 @@ foreach ($numbers as $number){
         echo " Error starting phone call\n";
     }
 
-    echo 'hello';
+
 }
 ?>
