@@ -14,14 +14,14 @@
 <?php
 
 $email = $_POST['email'];
-$dsn = 'mysql:dbname=hoge;host=localhost';
+$dsn = 'mysql:dbname=teasing;host=localhost';
 $user = 'yoyaku';
 $password = 'yoyaku';
 
 try{
     $dbh = new PDO($dsn, $user, $password);
 
-    $sql = 'insert into test (name) values (?)';
+    $sql = 'insert into email_list (email) values (?)';
     $stmt = $dbh->prepare($sql);
     $flag = $stmt->execute(array($email));
 

@@ -14,16 +14,16 @@
 
 <?php
 
-$dsn = 'mysql:dbname=hoge;host=localhost';
+$dsn = 'mysql:dbname=teasing;host=localhost';
 $user = 'yoyaku';
 $password = 'yoyaku';
 
 try{
     $dbh = new PDO($dsn, $user, $password);
 
-    $sql = 'select * from test';
+    $sql = 'select * from email_list';
     foreach ($dbh->query($sql) as $row) {
-        print($row['name'].'<br />');
+        print($row['email'].'<br />');
     }
     
 }catch (PDOException $e){
