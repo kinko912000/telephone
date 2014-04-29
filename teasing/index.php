@@ -19,6 +19,7 @@ try{
     $sql = 'select * from test';
     foreach ($dbh->query($sql) as $row) {
         print($row['name'].'<br />');
+        print("hoge");
     }
 }catch (PDOException $e){
     print('Error:'.$e->getMessage());
