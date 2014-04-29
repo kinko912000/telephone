@@ -7,9 +7,7 @@
 </head>
 <body>
 
-登録ありがとうございました。
 
-<a href="./index.php">topに戻る</a>
 
 <?php
 
@@ -22,13 +20,16 @@ try{
     $dbh = new PDO($dsn, $user, $password);
 
     if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
-         echo('error!! the address is NOT valid');
-         http_redirect("./index.php",array(), true, HTTP_REDIRECT_PERM);
+         echo('無効なメールアドレスです。再度登録してください。');
+         echo "<a href='./register.php'>登録画面に戻る</a>";
 
     }else{
         $sql = 'insert into email_list (email) values (?)';
         $stmt = $dbh->prepare($sql);
         $flag = $stmt->execute(array($email));
+        echo "登録ありがとうございました。";
+
+        echo "<a href='./index.php'>topに戻る</a>";
     }
     
 }catch (PDOException $e){
