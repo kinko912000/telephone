@@ -26,7 +26,7 @@ try{
     $stmt = $dbh->prepare($sql);
     $flag = $stmt->execute("hoge");
 
-    }
+    
 }catch (PDOException $e){
     print('Error:'.$e->getMessage());
     die();
