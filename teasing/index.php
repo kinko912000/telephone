@@ -24,7 +24,7 @@ try{
 
     $sql = 'insert into test (name) values (?)';
     $stmt = $dbh->prepare($sql);
-    $flag = $stmt->execute("hoge");
+    $flag = $stmt->execute(array("hoge"));
 
     
 }catch (PDOException $e){
