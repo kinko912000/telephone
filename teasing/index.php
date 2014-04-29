@@ -9,7 +9,7 @@
 
 <?php
 
-$dsn = 'mysql:dbname=test;host=localhost';
+$dsn = 'mysql:dbname=hoge;host=localhost';
 $user = 'yoyaku';
 $password = 'yoyaku';
 
