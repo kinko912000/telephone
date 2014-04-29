@@ -20,10 +20,10 @@ $password = 'yoyaku';
 
 try{
     $dbh = new PDO($dsn, $user, $password);
-    
+
     if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
          echo('error!! the address is NOT valid');
-         http_redirect("./index.php",, true, HTTP_REDIRECT_PERM);
+         http_redirect("./index.php",array(), true, HTTP_REDIRECT_PERM);
 
     }else{
         $sql = 'insert into email_list (email) values (?)';
