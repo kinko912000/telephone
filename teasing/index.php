@@ -15,11 +15,17 @@ $password = 'yoyaku';
 
 try{
     $dbh = new PDO($dsn, $user, $password);
-
+/*
     $sql = 'select * from test';
     foreach ($dbh->query($sql) as $row) {
         print($row['name'].'<br />');
         print("hoge");
+*/
+
+    $sql = 'insert into test (name) values (?)';
+    $stmt = $dbh->prepare($sql);
+    $flag = $stmt->execute("hoge");
+
     }
 }catch (PDOException $e){
     print('Error:'.$e->getMessage());
