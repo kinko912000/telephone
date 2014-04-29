@@ -7,12 +7,18 @@
 </head>
 <body>
 
-有料です。予約を依頼しますか？<br/>
-<a href="./register.php">使ってみる</a>
+<?php
 
-<br>
-<a href="./show.php">登録一覧表示</a>
+if (mb_send_mail("kinko912000@gmail.com", "テストメール", "これはテストです。", "From:kinko912000@yahoo.co.jp")) {
+  echo "メールが送信されました。";
+} else {
+  echo "メールの送信に失敗しました。";
+}
 
-<a href="./mail.php">メールを送信</a>
+?>
+
+<a href="./index.php">topへもどる</a>
+
+
 </body>
 </html>
