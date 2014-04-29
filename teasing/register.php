@@ -7,12 +7,13 @@
 </head>
 <body>
 
-有料です。予約を依頼しますか？<br/>
-<a href="./register.php">使ってみる</a>
+まだ準備中です。<br>
 
+<form action="./insert.php" method="post">
+    <input type='text' name='email'>
+    <input type='submit' value='登録'>
+</form>
 <br>
-<a href="./show.php">登録一覧表示</a>
-
-
+<a href="./index.php">戻る</a>
 </body>
 </html>
