@@ -17,9 +17,6 @@ $dsn = 'mysql:dbname=teasing;host=localhost';
 $db_user = 'yoyaku';
 $db_password = 'yoyaku';
 
-$password = md5(utf8_encode($password)); 
-echo $password;
-
 try{
     $dbh = new PDO($dsn, $db_user, $db_password);
     $email = htmlentities($email, ENT_QUOTES);
@@ -37,6 +34,8 @@ try{
     }else{
         $timestamp = time();
         echo $timestamp;
+        $password = md5(utf8_encode($password)); 
+        echo $password;
         $sql = 'insert into users (email,password,create_time) values (?,?,?)';
         $stmt = $dbh->prepare($sql);
         $flag = $stmt->execute(array($email,$password,$timestamp));
