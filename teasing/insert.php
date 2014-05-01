@@ -18,7 +18,8 @@ $password = 'yoyaku';
 
 try{
     $dbh = new PDO($dsn, $user, $password);
-
+    $email = htmlspecialchars($email, ENT_NOQUOTES);
+    echo $email;
     if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
          echo('無効なメールアドレスです。再度登録してください。');
          echo "<a href='./register.php'>登録画面に戻る</a>";
