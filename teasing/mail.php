@@ -10,7 +10,7 @@
 
 
 <?php
-$to = 'you@example.jp';
+$to = 'kinko912000@yahoo.co.jp';
 $subject = 'test mail';
 $message = "This is Test mail¥nMulti Line";
 $message = wordwrap($message, 70, "¥n");
