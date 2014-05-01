@@ -33,6 +33,7 @@ try{
          echo "<a href='./register.php'>登録画面に戻る</a>";
     }else{
         $timestamp = time();
+        echo $timestamp;
         $sql = 'insert into users (email,password,create_time) values (?,?,?)';
         $stmt = $dbh->prepare($sql);
         $flag = $stmt->execute(array($email,$password,$timestamp));
@@ -50,6 +51,7 @@ $dbh = null;
 
 function check_same_address($dbh,$email) {
     $sql = "select * from users where 'email' = ?";
+    echo $dbh->query($sql,$email);
     foreach ($dbh->query($sql,$email) as $row) {
         print($row['email'].'<br />');
         if($row){
