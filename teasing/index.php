@@ -18,6 +18,6 @@
 <a href="./mail.php">メールを送信</a>
 
 Twitter<br>
-<a href="http://twitter.com/intent/tweet?original_referer=http://ec2-54-178-190-97.ap-northeast-1.compute.amazonaws.com/index.php&url=http://ec2-54-178-190-97.ap-northeast-1.compute.amazonaws.com&text=&amp;SmartYoyaku::">twitterでつぶやく</a><br>
+<a href="http://twitter.com/intent/tweet?original_referer=http://ec2-54-178-190-97.ap-northeast-1.compute.amazonaws.com/index.php&url=http://ec2-54-178-190-97.ap-northeast-1.compute.amazonaws.com&text=&#010;SmartYoyaku::">twitterでつぶやく</a><br>
 </body>
 </html>
