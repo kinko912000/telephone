@@ -52,12 +52,10 @@ $dbh = null;
 function check_same_address($dbh,$email) {
     $sql = "select * from users where 'email' = ?";
     $stmt = $dbh->prepare($sql);
-    echo $stmt->execute(array($email));
-    foreach ($stmt->execute(array($email)) as $row) {
-        print($row['email'].'<br />');
-        if($row){
+    $stmt->execute(array($email));
+
+    foreach ($query->fetch() as $row) {
             return 1;
-        }
     }
     return 0;
 }
