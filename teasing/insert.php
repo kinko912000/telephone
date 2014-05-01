@@ -29,9 +29,9 @@ try{
          echo "<a href='./register.php'>登録画面に戻る</a>";
 
     }else if (check_same_address($dbh,$email)){
-         echo('すでに使用されているメールアドレスです。別のアドレスを登録してください。');<br
+         echo('すでに使用されているメールアドレスです。別のアドレスを登録してください。');<br>
          echo "<a href='./register.php'>登録画面に戻る</a>";
-    }else if (valid_password($password))){
+    }else if (valid_password($password)){
          echo('無効なパスワードです。6-20文字。英数字で入力してください。');<br>
          echo "<a href='./register.php'>登録画面に戻る</a>";
     }else{
