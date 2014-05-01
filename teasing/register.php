@@ -11,7 +11,7 @@
 
 <form action="./insert.php" method="post">
     メールアドレス：<input type='text' name='email'><br>
-    パスワード：<input type='text' name='password'>
+    パスワード：<input type='password' name='password'>
     <input type='submit' value='登録'>
 </form>
 

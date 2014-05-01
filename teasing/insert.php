@@ -25,11 +25,14 @@ try{
     $email = htmlentities($email, ENT_QUOTES);
 
     if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
-         echo('無効なメールアドレスです。再度登録してください。');
+         echo('無効なメールアドレスです。再度登録してください。'); <br>
          echo "<a href='./register.php'>登録画面に戻る</a>";
 
     }else if (check_same_address($dbh,$email)){
-         echo('すでに使用されているメールアドレスです。別のアドレスを登録してください。');
+         echo('すでに使用されているメールアドレスです。別のアドレスを登録してください。');<br
+         echo "<a href='./register.php'>登録画面に戻る</a>";
+    }else if (valid_password($password))){
+         echo('無効なパスワードです。6-20文字。英数字で入力してください。');<br>
          echo "<a href='./register.php'>登録画面に戻る</a>";
     }else{
         $timestamp = time();
@@ -57,6 +60,24 @@ function check_same_address($dbh,$email) {
         return 1;
     }
     return 0;
+}
+function valid_password($password) {
+        if( strlen($password) < 6 ) {
+            return 1;
+        }
+        if( strlen($password) > 20 ) {
+            return 1;
+        }
+        if( !preg_match("#[0-9]+#", $password) ) {
+            return 1;
+        }
+        if( !preg_match("#[a-z]+#", $password) ) {
+            return 1;
+        }
+        if( !preg_match("#[A-Z]+#", $password) ) {
+            return 1;
+        }
+        return 0;
 }
 
 
