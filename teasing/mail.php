@@ -14,8 +14,8 @@ $to = 'you@example.jp';
 $subject = 'test mail';
 $message = "This is Test mail¥nMulti Line";
 $message = wordwrap($message, 70, "¥n");
-$headers = 'From: kinko912000@gmail.com'."¥r¥n".
-           'To: kinko912000@gmail.com'."¥r¥n".
+$headers = 'From: kinko912000@yahoo.co.jp'."¥r¥n".
+           'To: kinko912000@yahoo.co.jp'."¥r¥n".
            'X-Mailer: PHP/Mail';
 
 if (mail($to, $subject, $message, $headers)){
