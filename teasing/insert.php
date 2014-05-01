@@ -53,7 +53,7 @@ function check_same_address($dbh,$email) {
     $sql = "select * from users where email = ?";
     $stmt = $dbh->prepare($sql);
     $stmt->execute(array($email));
-    if($query->fetch()){
+    if($stmt->fetch()){
         return 1;
     }
     return 0;
