@@ -12,14 +12,23 @@
 <?php
 
 $email = $_POST['email'];
+$password = $_POST['password'];
 $dsn = 'mysql:dbname=teasing;host=localhost';
 $user = 'yoyaku';
 $password = 'yoyaku';
 
+$password = md5(utf8_encode($password)); 
+echo $password;
+//$r = mysql_query("SELECT *, MD5(`word`) FROM `table_name` WHERE MD5(`word`) LIKE '{$md5}'");
+if($r)
+    while( $row= mysql_fetch_assoc($r) )
+        print_r($row);
+
+
 try{
     $dbh = new PDO($dsn, $user, $password);
-    $new = htmlentities($email, ENT_QUOTES);
-    echo $new;
+    $email = htmlentities($email, ENT_QUOTES);
+    echo $email;
     if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
          echo('無効なメールアドレスです。再度登録してください。');
          echo "<a href='./register.php'>登録画面に戻る</a>";

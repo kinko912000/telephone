@@ -11,8 +11,10 @@
 
 <form action="./insert.php" method="post">
     <input type='text' name='email'>
+    <input type='text' name='password'>
     <input type='submit' value='登録'>
 </form>
+
 <br>
 <a href="./index.php">戻る</a>
 </body>
