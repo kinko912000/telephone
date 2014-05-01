@@ -63,18 +63,27 @@ function check_same_address($dbh,$email) {
 function valid_password($password) {
     echo $password;
         if( strlen($password) < 6 ) {
+            echo "a";
             return 1;
         }
         if( strlen($password) > 20 ) {
+            echo "b";
+
             return 1;
         }
         if( !preg_match("#[0-9]+#", $password) ) {
+            echo "c";
+
             return 1;
         }
         if( !preg_match("#[a-z]+#", $password) ) {
+            echo "d";
+
             return 1;
         }
         if( !preg_match("#[A-Z]+#", $password) ) {
+            echo "e";
+
             return 1;
         }
         return 0;
