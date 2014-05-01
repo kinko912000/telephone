@@ -10,8 +10,8 @@
 まだ準備中です。<br>
 
 <form action="./insert.php" method="post">
-    <input type='text' name='email'>
-    <input type='text' name='password'>
+    メールアドレス：<input type='text' name='email'><br>
+    パスワード：<input type='text' name='password'>
     <input type='submit' value='登録'>
 </form>
 

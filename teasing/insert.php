@@ -14,19 +14,19 @@
 $email = $_POST['email'];
 $password = $_POST['password'];
 $dsn = 'mysql:dbname=teasing;host=localhost';
-$user = 'yoyaku';
-$password = 'yoyaku';
+$db_user = 'yoyaku';
+$db_password = 'yoyaku';
 
 $password = md5(utf8_encode($password)); 
 echo $password;
-//$r = mysql_query("SELECT *, MD5(`word`) FROM `table_name` WHERE MD5(`word`) LIKE '{$md5}'");
+
 if($r)
     while( $row= mysql_fetch_assoc($r) )
         print_r($row);
 
 
 try{
-    $dbh = new PDO($dsn, $user, $password);
+    $dbh = new PDO($dsn, $db_user, $db_password);
     $email = htmlentities($email, ENT_QUOTES);
     echo $email;
     if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
@@ -34,9 +34,10 @@ try{
          echo "<a href='./register.php'>登録画面に戻る</a>";
 
     }else{
-        $sql = 'insert into email_list (email) values (?)';
+        $timestamp = time();
+        $sql = 'insert into users (email,password,create_time) values (?,?,?)';
         $stmt = $dbh->prepare($sql);
-        $flag = $stmt->execute(array($email));
+        $flag = $stmt->execute(array($email,$password,$timestamp));
         echo "登録ありがとうございました。";
 
         echo "<a href='./index.php'>topに戻る</a>";
