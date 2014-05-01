@@ -25,14 +25,14 @@ try{
     $email = htmlentities($email, ENT_QUOTES);
 
     if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
-         echo('無効なメールアドレスです。再度登録してください。'); <br>
-         echo "<a href='./register.php'>登録画面に戻る</a>";
+         echo('無効なメールアドレスです。再度登録してください'); 
+         echo "<a href='./register.php'>登録画面に戻る</a>\n";
 
     }else if (check_same_address($dbh,$email)){
-         echo('すでに使用されているメールアドレスです。別のアドレスを登録してください。');<br>
+         echo("すでに使用されているメールアドレスです。別のアドレスを登録してください。\n");
          echo "<a href='./register.php'>登録画面に戻る</a>";
     }else if (valid_password($password)){
-         echo('無効なパスワードです。6-20文字。英数字で入力してください。');<br>
+         echo("無効なパスワードです。6-20文字。英数字で入力してください。\n");
          echo "<a href='./register.php'>登録画面に戻る</a>";
     }else{
         $timestamp = time();
