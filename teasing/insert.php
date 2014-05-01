@@ -20,19 +20,17 @@ $db_password = 'yoyaku';
 $password = md5(utf8_encode($password)); 
 echo $password;
 
-if($r)
-    while( $row= mysql_fetch_assoc($r) )
-        print_r($row);
-
-
 try{
     $dbh = new PDO($dsn, $db_user, $db_password);
     $email = htmlentities($email, ENT_QUOTES);
-    echo $email;
+
     if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
          echo('無効なメールアドレスです。再度登録してください。');
          echo "<a href='./register.php'>登録画面に戻る</a>";
 
+    }else if (check_same_address($dbh,$email)){
+         echo('すでに使用されているメールアドレスです。別のアドレスを登録してください。');
+         echo "<a href='./register.php'>登録画面に戻る</a>";
     }else{
         $timestamp = time();
         $sql = 'insert into users (email,password,create_time) values (?,?,?)';
@@ -49,6 +47,18 @@ try{
 }
 
 $dbh = null;
+
+function check_same_address($dbh,$email) {
+    $sql = "select * from users where 'email' = ?";
+    foreach ($dbh->query($sql,$email) as $row) {
+        print($row['email'].'<br />');
+        if($row){
+            return 1;
+        }
+    }
+    return 0;
+}
+
 
 ?>
 

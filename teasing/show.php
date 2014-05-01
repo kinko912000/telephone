@@ -21,7 +21,7 @@ $password = 'yoyaku';
 try{
     $dbh = new PDO($dsn, $user, $password);
 
-    $sql = 'select * from email_list';
+    $sql = 'select * from users';
     foreach ($dbh->query($sql) as $row) {
         print($row['email'].'<br />');
     }
