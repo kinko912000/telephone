@@ -60,7 +60,7 @@ function check_same_address($dbh,$email) {
     return 0;
 }
 function valid_password($password) {
-    echo $password;
+
         if( strlen($password) < 6 ) {
             return 1;
         }
