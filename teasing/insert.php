@@ -13,6 +13,7 @@
 
 $email = $_POST['email'];
 $password = $_POST['password'];
+$confirm_password = $_POST['confirm_password'];
 $dsn = 'mysql:dbname=teasing;host=localhost';
 $db_user = 'yoyaku';
 $db_password = 'yoyaku';
@@ -30,6 +31,9 @@ try{
          echo "<a href='./register.php'>登録画面に戻る</a>";
     }else if (valid_password($password)){
          echo("無効なパスワードです。6-20文字。大文字、小文字、英数字を少なくとも１つ含む必要があります。\n");
+         echo "<a href='./register.php'>登録画面に戻る</a>";
+    }else if (check_same_password($password,$confirm_password)){
+         echo("パスワードが一致しません。\n");
          echo "<a href='./register.php'>登録画面に戻る</a>";
     }else{
         $timestamp = localtime();
@@ -55,6 +59,13 @@ function check_same_address($dbh,$email) {
     $stmt = $dbh->prepare($sql);
     $stmt->execute(array($email));
     if($stmt->fetch()){
+        return 1;
+    }
+    return 0;
+}
+
+function check_same_password($password,$confirm_password) {
+    if($password != $confirm_password){
         return 1;
     }
     return 0;
