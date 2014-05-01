@@ -7,15 +7,24 @@
 </head>
 <body>
 
+
+
 <?php
+$to = 'you@example.jp';
+$subject = 'test mail';
+$message = "This is Test mail¥nMulti Line";
+$message = wordwrap($message, 70, "¥n");
+$headers = 'From: kinko912000@gmail.com'."¥r¥n".
+           'To: kinko912000@gmail.com'."¥r¥n".
+           'X-Mailer: PHP/Mail';
 
-if (mb_send_mail("kinko912000@gmail.com", "テストメール", "これはテストです。", "From:kinko912000@yahoo.co.jp")) {
-  echo "メールが送信されました。";
-} else {
-  echo "メールの送信に失敗しました。";
+if (mail($to, $subject, $message, $headers)){
+  print('成功');
+}else{
+  print('エラー');
 }
-
 ?>
+
 
 <a href="./index.php">topへもどる</a>
 
