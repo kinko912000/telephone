@@ -29,7 +29,7 @@ try{
          echo("すでに使用されているメールアドレスです。別のアドレスを登録してください。\n");
          echo "<a href='./register.php'>登録画面に戻る</a>";
     }else if (valid_password($password)){
-         echo("無効なパスワードです。6-20文字。英数字で入力してください。\n");
+         echo("無効なパスワードです。6-20文字。大文字、小文字、英数字を少なくとも１つ含む必要があります。\n");
          echo "<a href='./register.php'>登録画面に戻る</a>";
     }else{
         $timestamp = time();
@@ -63,27 +63,18 @@ function check_same_address($dbh,$email) {
 function valid_password($password) {
     echo $password;
         if( strlen($password) < 6 ) {
-            echo "a";
             return 1;
         }
         if( strlen($password) > 20 ) {
-            echo "b";
-
             return 1;
         }
         if( !preg_match("#[0-9]+#", $password) ) {
-            echo "c";
-
             return 1;
         }
         if( !preg_match("#[a-z]+#", $password) ) {
-            echo "d";
-
             return 1;
         }
         if( !preg_match("#[A-Z]+#", $password) ) {
-            echo "e";
-
             return 1;
         }
         return 0;
