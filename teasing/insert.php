@@ -32,10 +32,9 @@ try{
          echo("無効なパスワードです。6-20文字。大文字、小文字、英数字を少なくとも１つ含む必要があります。\n");
          echo "<a href='./register.php'>登録画面に戻る</a>";
     }else{
-        $timestamp = time();
-        echo $timestamp;
+        $timestamp = localtime();
         $password = md5(utf8_encode($password)); 
-        echo $password;
+
         $sql = 'insert into users (email,password,create_time) values (?,?,?)';
         $stmt = $dbh->prepare($sql);
         $flag = $stmt->execute(array($email,$password,$timestamp));
