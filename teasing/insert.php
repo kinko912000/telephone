@@ -71,6 +71,9 @@ function check_same_password($password,$confirm_password) {
     return 0;
 }
 function valid_password($password) {
+        if (!preg_match('/([0-9]|[a-z]|[A-Z]){6,20}/', $password)) {
+            return 1;
+        }
 
         if( strlen($password) < 6 ) {
             return 1;
