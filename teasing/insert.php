@@ -30,7 +30,7 @@ try{
          echo("すでに使用されているメールアドレスです。別のアドレスを登録してください。\n");
          echo "<a href='./register.php'>登録画面に戻る</a>";
     }else if (valid_password($password)){
-         echo("無効なパスワードです。6-20文字。大文字、小文字、英数字を少なくとも１つ含む必要があります。\n");
+         echo("無効なパスワードです。6-20文字。英数字で入力してください。\n");
          echo "<a href='./register.php'>登録画面に戻る</a>";
     }else if (check_same_password($password,$confirm_password)){
          echo("パスワードが一致しません。\n");
@@ -81,15 +81,15 @@ function valid_password($password) {
         if( strlen($password) > 20 ) {
             return 1;
         }
-        if( !preg_match("#[0-9]+#", $password) ) {
-            return 1;
-        }
-        if( !preg_match("#[a-z]+#", $password) ) {
-            return 1;
-        }
-        if( !preg_match("#[A-Z]+#", $password) ) {
-            return 1;
-        }
+//        if( !preg_match("#[0-9]+#", $password) ) {
+//            return 1;
+//        }   
+//        if( !preg_match("#[a-z]+#", $password) ) {
+//            return 1;
+//        }
+//        if( !preg_match("#[A-Z]+#", $password) ) {
+//            return 1;
+//        }
         return 0;
 }
 
